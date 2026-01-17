@@ -3,140 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hsin Yi's Oregon Solo Trip</title>
+    <title>Oregon Solo Adventure</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2D5A27; -webkit-tap-highlight-color: transparent; }
-        .card { background: white; border-radius: 28px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border-left: 8px solid #2D5A27; }
-        .alert-card { border-left-color: #F97316; background-color: #FFF7ED; }
-        .nav-btn { background: #2D5A27; color: white; width: 44px; height: 44px; border-radius: 12px; display: flex; items-center: center; justify-content: center; text-decoration: none; }
+        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2D5A27; }
+        .day-label { writing-mode: vertical-rl; text-orientation: mixed; }
+        .card { background: white; border-radius: 24px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.05); }
+        .btn-nav { background: #2D5A27; color: white; padding: 10px; border-radius: 12px; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; }
+        .tag { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 99px; text-transform: uppercase; margin-bottom: 4px; display: inline-block; }
     </style>
 </head>
-<body class="max-w-md mx-auto">
+<body class="max-w-md mx-auto min-h-screen pb-12">
 
-    <header class="bg-[#2D5A27] text-white p-10 rounded-b-[48px] shadow-xl text-center mb-8">
-        <h1 class="text-3xl font-black tracking-tighter italic">OREGON SOLO</h1>
-        <p class="text-sm opacity-70 mt-2 font-medium">1/29 - 2/2 • 山河湖海一人獨享</p>
+    <header class="bg-[#2D5A27] text-white p-10 rounded-b-[40px] shadow-2xl mb-8 relative overflow-hidden">
+        <div class="relative z-10">
+            <h1 class="text-3xl font-black tracking-tighter italic">OREGON SOLO</h1>
+            <p class="text-xs opacity-60 mt-1 uppercase tracking-widest font-bold">1/29 - 2/2 • Forest & Coast</p>
+        </div>
+        <div class="absolute top-0 right-0 opacity-10 text-8xl font-black -mr-4 -mt-4">🌲</div>
     </header>
 
-    <main class="px-6 pb-12">
-        <div class="mb-10">
-            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
-                <h2 class="font-black text-xl italic uppercase">Day 1 • 1/29 (Thu)</h2>
-                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">44°F ☁️</span>
+    <main class="px-6">
+        
+        <div class="mb-12">
+            <div class="flex items-center mb-4">
+                <div class="bg-[#2D5A27] text-white font-black px-3 py-1 rounded-lg text-sm mr-3">1/29</div>
+                <h2 class="text-xl font-black italic">PORTLAND 購物日</h2>
             </div>
             
-            <div class="card">
+            <div class="card border-l-8 border-[#2D5A27]">
                 <div class="flex justify-between items-start">
-                    <div class="pr-4">
-                        <span class="text-2xl mb-1 block">🛍️</span>
-                        <h3 class="font-black text-lg">Pioneer Place / Washington Square</h3>
-                        <p class="text-sm text-gray-500 font-medium leading-tight">奧勒岡免稅購物！鎖定 SKIMS & Alo Yoga</p>
+                    <div>
+                        <span class="tag bg-orange-100 text-orange-600">必逛免稅</span>
+                        <h3 class="font-bold text-lg">Pioneer Place / Washington Sq</h3>
+                        <p class="text-sm text-gray-500 mt-1">奧勒岡 0% 消費稅！鎖定 SKIMS & Alo Yoga</p>
                     </div>
-                    <a href="https://maps.google.com/?q=Pioneer+Place" class="nav-btn">🧭</a>
+                    <a href="https://maps.google.com/?cid=4077299775746900834&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="btn-nav">🧭</a>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card border-l-8 border-[#2D5A27]">
                 <div class="flex justify-between items-start">
-                    <div class="pr-4">
-                        <span class="text-2xl mb-1 block">🚠</span>
-                        <h3 class="font-black text-lg">Portland Aerial Tram</h3>
-                        <p class="text-sm text-gray-500 font-medium leading-tight">波特蘭高空纜車，俯瞰城市全景</p>
+                    <div>
+                        <span class="tag bg-blue-100 text-blue-600">城市高空</span>
+                        <h3 class="font-bold text-lg">Portland Aerial Tram</h3>
+                        <p class="text-sm text-gray-500 mt-1">搭乘纜車俯瞰波特蘭市區與遠方雪山</p>
                     </div>
-                    <a href="https://maps.google.com/?q=Portland+Aerial+Tram" class="nav-btn">🧭</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="mb-10">
-            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
-                <h2 class="font-black text-xl italic uppercase">Day 2 • 1/30 (Fri)</h2>
-                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">46°F 🌧️</span>
-            </div>
-
-            <div class="card">
-                <div class="flex justify-between items-start">
-                    <div class="pr-4">
-                        <span class="text-2xl mb-1 block">🍩</span>
-                        <h3 class="font-black text-lg">Voodoo Doughnut</h3>
-                        <p class="text-sm text-gray-500 font-medium leading-tight">買著名的粉紅盒子甜甜圈 (Davis分店)</p>
-                    </div>
-                    <a href="https://maps.app.goo.gl/h4vEk7qglVQRqwnZu1fz42U" class="nav-btn">🧭</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="flex justify-between items-start">
-                    <div class="pr-4">
-                        <span class="text-2xl mb-1 block">✈️</span>
-                        <h3 class="font-black text-lg">Airplane Home</h3>
-                        <p class="text-sm text-gray-500 font-medium leading-tight">森林中的波音 727！私人領地請保持距離</p>
-                    </div>
-                    <a href="https://maps.google.com/?q=Airplane+Home" class="nav-btn">🧭</a>
-                </div>
-            </div>
-
-            <div class="card alert-card">
-                <div class="flex justify-between items-start">
-                    <div class="pr-4">
-                        <span class="text-2xl mb-1 block">🌊</span>
-                        <h3 class="font-black text-lg text-orange-700">Thor's Well (雷神之井)</h3>
-                        <p class="text-sm text-orange-600 font-bold leading-tight">⚠️ 16:37 漲潮！這是觀察海水倒灌的最佳時刻</p>
-                    </div>
-                    <a href="https://maps.google.com/?q=Thor's+Well" class="nav-btn" style="background:#F97316">🧭</a>
+                    <a href="https://maps.google.com/?cid=387851590102355960&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="btn-nav">🧭</a>
                 </div>
             </div>
         </div>
 
-        <div class="mb-10">
-            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
-                <h2 class="font-black text-xl italic uppercase">Day 3 • 1/31 (Sat)</h2>
-                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">45°F ☁️</span>
+        <div class="mb-12">
+            <div class="flex items-center mb-4">
+                <div class="bg-[#2D5A27] text-white font-black px-3 py-1 rounded-lg text-sm mr-3">1/30</div>
+                <h2 class="text-xl font-black italic">森林秘境與 101 公路</h2>
             </div>
-            <div class="card">
+
+            <div class="card border-l-8 border-[#2D5A27]">
                 <div class="flex justify-between items-start">
-                    <div class="pr-4">
-                        <span class="text-2xl mb-1 block">📸</span>
-                        <h3 class="font-black text-lg">Cannon Beach / Haystack Rock</h3>
-                        <p class="text-sm text-gray-500 font-medium leading-tight">101公路自駕精華，看夕陽下的巨石</p>
+                    <div>
+                        <span class="tag bg-pink-100 text-pink-600">網紅景點</span>
+                        <h3 class="font-bold text-lg">Voodoo Doughnut & Airplane Home</h3>
+                        <p class="text-sm text-gray-500 mt-1">買粉紅盒子甜甜圈，看森林裡的波音 727</p>
                     </div>
-                    <a href="https://maps.app.goo.gl/GyDYNeCklFQRIulHV5MDY40" class="nav-btn">🧭</a>
+                    <a href="https://maps.google.com/?cid=11904650569773145074&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="btn-nav">🧭</a>
+                </div>
+            </div>
+
+            <div class="card border-l-8 border-[#2D5A27]">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="tag bg-emerald-100 text-emerald-600">絕美開車路段</span>
+                        <h3 class="font-bold text-lg">Astoria-Megler Bridge</h3>
+                        <p class="text-sm text-gray-500 mt-1">跨越哥倫比亞河口，直奔 101 海岸線</p>
+                    </div>
+                    <a href="https://maps.google.com/?cid=727122139013677846&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="btn-nav">🧭</a>
+                </div>
+            </div>
+
+            <div class="card border-l-8 border-orange-500 bg-orange-50">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="tag bg-orange-200 text-orange-700">重要預警 16:37 漲潮</span>
+                        <h3 class="font-bold text-lg text-orange-800">Thor's Well (雷神之井)</h3>
+                        <p class="text-sm text-orange-700 mt-1">太平洋排水管奇觀，請務必準時抵達！</p>
+                    </div>
+                    <a href="https://maps.google.com/?cid=12961597945919458555&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="btn-nav" style="background:#F97316">🧭</a>
                 </div>
             </div>
         </div>
 
-        <div class="mb-10">
-            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
-                <h2 class="font-black text-xl italic uppercase">Day 4 • 2/1 (Sun)</h2>
-                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">48°F ☁️</span>
+        <div class="mb-12">
+            <div class="flex items-center mb-4">
+                <div class="bg-[#2D5A27] text-white font-black px-3 py-1 rounded-lg text-sm mr-3">1/31</div>
+                <h2 class="text-xl font-black italic">海邊慢活：隨開隨停</h2>
             </div>
-            <div class="card">
+            <div class="card border-l-8 border-[#2D5A27]">
                 <div class="flex justify-between items-start">
-                    <div class="pr-4">
-                        <span class="text-2xl mb-1 block">🥘</span>
-                        <h3 class="font-black text-lg text-[#2D5A27]">功夫川菜 / Bao Bao House</h3>
-                        <p class="text-sm text-gray-500 font-black leading-tight italic">五年沒回家的靈魂補給，尤金家鄉味！</p>
+                    <div>
+                        <span class="tag bg-purple-100 text-purple-600">夕陽必看</span>
+                        <h3 class="font-bold text-lg">Cannon Beach / Haystack Rock</h3>
+                        <p class="text-sm text-gray-500 mt-1">101 順時針自駕，大海始終在右手邊</p>
                     </div>
-                    <a href="https://maps.google.com/?q=Kung+Fu+Bistro+Eugene" class="nav-btn">🧭</a>
+                    <a href="https://maps.google.com/?cid=10187990713401600290&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="btn-nav">🧭</a>
                 </div>
             </div>
         </div>
 
-        <div class="mb-10">
-            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
-                <h2 class="font-black text-xl italic uppercase">Day 5 • 2/2 (Mon)</h2>
-                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">43°F ❄️</span>
+        <div class="mb-12">
+            <div class="flex items-center mb-4">
+                <div class="bg-[#2D5A27] text-white font-black px-3 py-1 rounded-lg text-sm mr-3">2/1</div>
+                <h2 class="text-xl font-black italic">家鄉味巡禮：尤金</h2>
             </div>
-            <div class="card">
+            <div class="card border-l-8 border-[#2D5A27]">
                 <div class="flex justify-between items-start">
-                    <div class="pr-4">
-                        <span class="text-2xl mb-1 block">🌲</span>
-                        <h3 class="font-black text-lg">Multnomah Falls</h3>
-                        <p class="text-sm text-gray-500 font-medium leading-tight">回西雅圖前的壯麗森林瀑布</p>
+                    <div>
+                        <span class="tag bg-red-100 text-red-600">靈魂補給點</span>
+                        <h3 class="font-bold text-lg uppercase">功夫川菜 / Bao Bao House</h3>
+                        <p class="text-sm font-black text-[#2D5A27] mt-1 leading-tight italic">五年沒吃的滋味！回母校走走熟悉的街道</p>
                     </div>
-                    <a href="https://maps.google.com/?cid=875595116486245927&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="nav-btn">🧭</a>
+                    <a href="https://maps.google.com/?cid=1776320483748502727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="btn-nav">🧭</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <div class="flex items-center mb-4">
+                <div class="bg-[#2D5A27] text-white font-black px-3 py-1 rounded-lg text-sm mr-3">2/2</div>
+                <h2 class="text-xl font-black italic">森林瀑布與歸途</h2>
+            </div>
+            <div class="card border-l-8 border-[#2D5A27]">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="tag bg-stone-100 text-stone-600">壯麗收尾</span>
+                        <h3 class="font-bold text-lg">Multnomah Falls</h3>
+                        <p class="text-sm text-gray-500 mt-1">造訪奧勒岡第一瀑布，隨後一路向北回西雅圖</p>
+                    </div>
+                    <a href="https://maps.google.com/?cid=875595116486245927&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="btn-nav">🧭</a>
                 </div>
             </div>
         </div>
