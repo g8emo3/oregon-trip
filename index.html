@@ -3,86 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hsin Yi's Oregon Trip</title>
+    <title>Hsin Yi's Oregon Solo Trip</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2D5A27; }
-        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2D5A27; -webkit-tap-highlight-color: transparent; }
+        .card { background: white; border-radius: 28px; padding: 20px; margin-bottom: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); border-left: 8px solid #2D5A27; }
+        .alert-card { border-left-color: #F97316; background-color: #FFF7ED; }
+        .nav-btn { background: #2D5A27; color: white; width: 44px; height: 44px; border-radius: 12px; display: flex; items-center: center; justify-content: center; text-decoration: none; }
     </style>
 </head>
-<body>
-    <div id="root"></div>
-    <script>
-        const { useState } = React;
-        const App = () => {
-            const [tab, setTab] = useState('itinerary');
-            const days = [
-                {
-                    date: "Day 1 - 1/29 (Thu)",
-                    title: "波特蘭免稅購物",
-                    weather: "44°F ☁️",
-                    items: [
-                        { icon: "🛍️", name: "Pioneer Place / Washington Square", desc: "奧勒岡免稅！攻佔 SKIMS & Alo Yoga", link: "https://maps.google.com/?q=Pioneer+Place" },
-                        { icon: "🚠", name: "Portland Aerial Tram", desc: "俯瞰市中心全景", link: "https://maps.google.com/?q=Portland+Aerial+Tram" }
-                    ]
-                },
-                {
-                    date: "Day 2 - 1/30 (Fri)",
-                    title: "101公路與排水管",
-                    weather: "46°F 🌧️",
-                    items: [
-                        { icon: "✈️", name: "Airplane Home", desc: "森林裡的波音 727 秘境", link: "https://maps.google.com/?q=Airplane+Home" },
-                        { icon: "🌊", name: "Thor's Well (雷神之井)", desc: "⚠️ 16:37 漲潮！海水倒灌奇觀", link: "https://maps.google.com/?q=Thor's+Well", alert: true }
-                    ]
-                },
-                {
-                    date: "Day 4 - 2/1 (Sun)",
-                    title: "尤金回憶與家鄉味",
-                    weather: "48°F ☁️",
-                    items: [
-                        { icon: "🥘", name: "功夫川菜 / Bao Bao House", desc: "五年沒回家的靈魂補給點", link: "https://maps.google.com/?q=Kung+Fu+Bistro+Eugene" }
-                    ]
-                }
-            ];
+<body class="max-w-md mx-auto">
 
-            return React.createElement('div', { className: 'max-w-md mx-auto min-h-screen pb-24' },
-                React.createElement('header', { className: 'bg-[#2D5A27] text-white p-10 rounded-b-[50px] shadow-2xl text-center' },
-                    React.createElement('h1', { className: 'text-3xl font-black tracking-tighter' }, 'OREGON SOLO'),
-                    React.createElement('p', { className: 'text-sm opacity-60 mt-2' }, '1/29 - 2/2 • Mountain & Sea')
-                ),
-                React.createElement('main', { className: 'p-6' },
-                    tab === 'itinerary' ? days.map((d, i) => 
-                        React.createElement('section', { key: i, className: 'mb-10' },
-                            React.createElement('div', { className: 'flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2' },
-                                React.createElement('h2', { className: 'font-black text-xl italic' }, d.date),
-                                React.createElement('span', { className: 'text-xs font-bold bg-white px-3 py-1 rounded-full' }, d.weather)
-                            ),
-                            d.items.map((item, j) => 
-                                React.createElement('div', { key: j, className: `bg-white p-5 rounded-[30px] shadow-sm mb-4 border-l-[8px] ${item.alert ? 'border-orange-500 bg-orange-50' : 'border-[#2D5A27]'}` },
-                                    React.createElement('div', { className: 'flex justify-between items-center' },
-                                        React.createElement('div', null,
-                                            React.createElement('span', { className: 'text-2xl mb-1 block' }, item.icon),
-                                            React.createElement('h3', { className: 'font-black text-lg' }, item.name),
-                                            React.createElement('p', { className: 'text-sm text-gray-500 font-medium' }, item.desc)
-                                        ),
-                                        React.createElement('a', { href: item.link, className: 'bg-[#2D5A27] text-white p-3 rounded-2xl shadow-lg' }, '🧭')
-                                    )
-                                )
-                            )
-                        )
-                    ) : React.createElement('div', { className: 'bg-white p-8 rounded-[40px] text-center' }, '🚨 緊急救援: 911 | 路援: 511')
-                ),
-                React.createElement('nav', { className: 'fixed bottom-6 left-6 right-6 glass-nav rounded-full px-10 py-5 flex justify-around shadow-2xl border border-white' },
-                    React.createElement('button', { onClick: () => setTab('itinerary'), className: `font-black ${tab === 'itinerary' ? 'text-[#2D5A27]' : 'text-gray-300'}` }, '行程'),
-                    React.createElement('button', { onClick: () => setTab('help'), className: `font-black ${tab === 'help' ? 'text-[#2D5A27]' : 'text-gray-300'}` }, '工具')
-                )
-            );
-        };
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(React.createElement(App));
-    </script>
+    <header class="bg-[#2D5A27] text-white p-10 rounded-b-[48px] shadow-xl text-center mb-8">
+        <h1 class="text-3xl font-black tracking-tighter italic">OREGON SOLO</h1>
+        <p class="text-sm opacity-70 mt-2 font-medium">1/29 - 2/2 • 山河湖海一人獨享</p>
+    </header>
+
+    <main class="px-6 pb-12">
+        <div class="mb-10">
+            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
+                <h2 class="font-black text-xl italic uppercase">Day 1 • 1/29 (Thu)</h2>
+                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">44°F ☁️</span>
+            </div>
+            
+            <div class="card">
+                <div class="flex justify-between items-start">
+                    <div class="pr-4">
+                        <span class="text-2xl mb-1 block">🛍️</span>
+                        <h3 class="font-black text-lg">Pioneer Place / Washington Square</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-tight">奧勒岡免稅購物！鎖定 SKIMS & Alo Yoga</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=Pioneer+Place" class="nav-btn">🧭</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="flex justify-between items-start">
+                    <div class="pr-4">
+                        <span class="text-2xl mb-1 block">🚠</span>
+                        <h3 class="font-black text-lg">Portland Aerial Tram</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-tight">波特蘭高空纜車，俯瞰城市全景</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=Portland+Aerial+Tram" class="nav-btn">🧭</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-10">
+            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
+                <h2 class="font-black text-xl italic uppercase">Day 2 • 1/30 (Fri)</h2>
+                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">46°F 🌧️</span>
+            </div>
+
+            <div class="card">
+                <div class="flex justify-between items-start">
+                    <div class="pr-4">
+                        <span class="text-2xl mb-1 block">🍩</span>
+                        <h3 class="font-black text-lg">Voodoo Doughnut</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-tight">買著名的粉紅盒子甜甜圈 (Davis分店)</p>
+                    </div>
+                    <a href="https://maps.app.goo.gl/h4vEk7qglVQRqwnZu1fz42U" class="nav-btn">🧭</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="flex justify-between items-start">
+                    <div class="pr-4">
+                        <span class="text-2xl mb-1 block">✈️</span>
+                        <h3 class="font-black text-lg">Airplane Home</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-tight">森林中的波音 727！私人領地請保持距離</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=Airplane+Home" class="nav-btn">🧭</a>
+                </div>
+            </div>
+
+            <div class="card alert-card">
+                <div class="flex justify-between items-start">
+                    <div class="pr-4">
+                        <span class="text-2xl mb-1 block">🌊</span>
+                        <h3 class="font-black text-lg text-orange-700">Thor's Well (雷神之井)</h3>
+                        <p class="text-sm text-orange-600 font-bold leading-tight">⚠️ 16:37 漲潮！這是觀察海水倒灌的最佳時刻</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=Thor's+Well" class="nav-btn" style="background:#F97316">🧭</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-10">
+            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
+                <h2 class="font-black text-xl italic uppercase">Day 3 • 1/31 (Sat)</h2>
+                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">45°F ☁️</span>
+            </div>
+            <div class="card">
+                <div class="flex justify-between items-start">
+                    <div class="pr-4">
+                        <span class="text-2xl mb-1 block">📸</span>
+                        <h3 class="font-black text-lg">Cannon Beach / Haystack Rock</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-tight">101公路自駕精華，看夕陽下的巨石</p>
+                    </div>
+                    <a href="https://maps.app.goo.gl/GyDYNeCklFQRIulHV5MDY40" class="nav-btn">🧭</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-10">
+            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
+                <h2 class="font-black text-xl italic uppercase">Day 4 • 2/1 (Sun)</h2>
+                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">48°F ☁️</span>
+            </div>
+            <div class="card">
+                <div class="flex justify-between items-start">
+                    <div class="pr-4">
+                        <span class="text-2xl mb-1 block">🥘</span>
+                        <h3 class="font-black text-lg text-[#2D5A27]">功夫川菜 / Bao Bao House</h3>
+                        <p class="text-sm text-gray-500 font-black leading-tight italic">五年沒回家的靈魂補給，尤金家鄉味！</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=Kung+Fu+Bistro+Eugene" class="nav-btn">🧭</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-10">
+            <div class="flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2">
+                <h2 class="font-black text-xl italic uppercase">Day 5 • 2/2 (Mon)</h2>
+                <span class="text-xs font-bold bg-white px-3 py-1 rounded-full shadow-sm">43°F ❄️</span>
+            </div>
+            <div class="card">
+                <div class="flex justify-between items-start">
+                    <div class="pr-4">
+                        <span class="text-2xl mb-1 block">🌲</span>
+                        <h3 class="font-black text-lg">Multnomah Falls</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-tight">回西雅圖前的壯麗森林瀑布</p>
+                    </div>
+                    <a href="https://maps.google.com/?cid=875595116486245927&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="nav-btn">🧭</a>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
