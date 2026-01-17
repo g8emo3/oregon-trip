@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hsin Yi's Oregon Trip</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #F4F1EA; color: #2D5A27; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const { useState } = React;
+        const App = () => {
+            const [tab, setTab] = useState('itinerary');
+            const days = [
+                {
+                    date: "Day 1 - 1/29 (Thu)",
+                    title: "波特蘭免稅購物",
+                    weather: "44°F ☁️",
+                    items: [
+                        { icon: "🛍️", name: "Pioneer Place / Washington Square", desc: "奧勒岡免稅！攻佔 SKIMS & Alo Yoga", link: "https://maps.google.com/?q=Pioneer+Place" },
+                        { icon: "🚠", name: "Portland Aerial Tram", desc: "俯瞰市中心全景", link: "https://maps.google.com/?q=Portland+Aerial+Tram" }
+                    ]
+                },
+                {
+                    date: "Day 2 - 1/30 (Fri)",
+                    title: "101公路與排水管",
+                    weather: "46°F 🌧️",
+                    items: [
+                        { icon: "✈️", name: "Airplane Home", desc: "森林裡的波音 727 秘境", link: "https://maps.google.com/?q=Airplane+Home" },
+                        { icon: "🌊", name: "Thor's Well (雷神之井)", desc: "⚠️ 16:37 漲潮！海水倒灌奇觀", link: "https://maps.google.com/?q=Thor's+Well", alert: true }
+                    ]
+                },
+                {
+                    date: "Day 4 - 2/1 (Sun)",
+                    title: "尤金回憶與家鄉味",
+                    weather: "48°F ☁️",
+                    items: [
+                        { icon: "🥘", name: "功夫川菜 / Bao Bao House", desc: "五年沒回家的靈魂補給點", link: "https://maps.google.com/?q=Kung+Fu+Bistro+Eugene" }
+                    ]
+                }
+            ];
+
+            return React.createElement('div', { className: 'max-w-md mx-auto min-h-screen pb-24' },
+                React.createElement('header', { className: 'bg-[#2D5A27] text-white p-10 rounded-b-[50px] shadow-2xl text-center' },
+                    React.createElement('h1', { className: 'text-3xl font-black tracking-tighter' }, 'OREGON SOLO'),
+                    React.createElement('p', { className: 'text-sm opacity-60 mt-2' }, '1/29 - 2/2 • Mountain & Sea')
+                ),
+                React.createElement('main', { className: 'p-6' },
+                    tab === 'itinerary' ? days.map((d, i) => 
+                        React.createElement('section', { key: i, className: 'mb-10' },
+                            React.createElement('div', { className: 'flex justify-between items-center mb-4 border-b-2 border-[#2D5A27]/10 pb-2' },
+                                React.createElement('h2', { className: 'font-black text-xl italic' }, d.date),
+                                React.createElement('span', { className: 'text-xs font-bold bg-white px-3 py-1 rounded-full' }, d.weather)
+                            ),
+                            d.items.map((item, j) => 
+                                React.createElement('div', { key: j, className: `bg-white p-5 rounded-[30px] shadow-sm mb-4 border-l-[8px] ${item.alert ? 'border-orange-500 bg-orange-50' : 'border-[#2D5A27]'}` },
+                                    React.createElement('div', { className: 'flex justify-between items-center' },
+                                        React.createElement('div', null,
+                                            React.createElement('span', { className: 'text-2xl mb-1 block' }, item.icon),
+                                            React.createElement('h3', { className: 'font-black text-lg' }, item.name),
+                                            React.createElement('p', { className: 'text-sm text-gray-500 font-medium' }, item.desc)
+                                        ),
+                                        React.createElement('a', { href: item.link, className: 'bg-[#2D5A27] text-white p-3 rounded-2xl shadow-lg' }, '🧭')
+                                    )
+                                )
+                            )
+                        )
+                    ) : React.createElement('div', { className: 'bg-white p-8 rounded-[40px] text-center' }, '🚨 緊急救援: 911 | 路援: 511')
+                ),
+                React.createElement('nav', { className: 'fixed bottom-6 left-6 right-6 glass-nav rounded-full px-10 py-5 flex justify-around shadow-2xl border border-white' },
+                    React.createElement('button', { onClick: () => setTab('itinerary'), className: `font-black ${tab === 'itinerary' ? 'text-[#2D5A27]' : 'text-gray-300'}` }, '行程'),
+                    React.createElement('button', { onClick: () => setTab('help'), className: `font-black ${tab === 'help' ? 'text-[#2D5A27]' : 'text-gray-300'}` }, '工具')
+                )
+            );
+        };
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(React.createElement(App));
+    </script>
+</body>
+</html>
